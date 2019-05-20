@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            srcDir 'src/test/resources'
+        }
+    }
+}
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+   	compile 'junit:junit:4.12'
+   	compile 'org.testng:testng:6.11'
+   	compile 'io.appium:java-client:4.1.2'
+   	compile 'info.cukes:cucumber-picocontainer:1.2.5'
+   	compile 'info.cukes:cucumber-junit:1.2.5'
+   	compile group: 'org.reflections', name: 'reflections', version: '0.9.9-RC1'
+}
